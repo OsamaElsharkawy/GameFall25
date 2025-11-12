@@ -21,10 +21,10 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
 
     // UI text component to display count of "PickUp" objects collected.
-    //public TMP_Text countText;
+    public TMP_Text countText;
 
     // UI object to display winning text.
-    //public GameObject winTextObject;
+    public GameObject winTextObject;
 
     // Start is called before the first frame update.
     void Start()
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         SetCountText();
 
         // Initially set the win text to be inactive.
-        //winTextObject.SetActive(false);
+        winTextObject.SetActive(false);
     }
 
     // This function is called when a move input is detected.
@@ -84,13 +84,13 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         // Update the count text with the current count.
-        //countText.text = "Count: " + count.ToString();
+        countText.text = "Count: " + count.ToString();
 
         // Check if the count has reached or exceeded the win condition.
-        if (count >= 12)
+        if (count >= 8)
         {
             // Display the win text.
-            //winTextObject.SetActive(true);
+            winTextObject.SetActive(true);
         }
     }
 }
