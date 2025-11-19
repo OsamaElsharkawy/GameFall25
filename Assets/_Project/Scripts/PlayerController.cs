@@ -78,6 +78,19 @@ public class PlayerController : MonoBehaviour
             // Update the count display.
             SetCountText();
         }
+
+        if (other.gameObject.CompareTag("Door"))
+        {
+            AnimationManager.Instance.ToggleDoor();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Door"))
+        {
+            AnimationManager.Instance.ToggleDoor();
+        }
     }
 
     // Function to update the displayed count of "PickUp" objects collected.
