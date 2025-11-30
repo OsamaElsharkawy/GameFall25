@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
             float normalized = timer / startTime;
             timerText.text = timer.ToString("F0");
 
-            Debug.Log("Timer: " + timer.ToString("F2") + " | Normalized: " + normalized.ToString("F2"));
+            //Debug.Log("Timer: " + timer.ToString("F2") + " | Normalized: " + normalized.ToString("F2"));
         }
         else
         {
