@@ -23,8 +23,9 @@ public class PlayerController : MonoBehaviour
     // UI text component to display count of "PickUp" objects collected.
     public TMP_Text countText;
 
-    // UI object to display winning text.
+    // UI object to display winning/losing text.
     public GameObject winTextObject;
+    public GameObject gameOverTextObject;
 
     // Start is called before the first frame update.
     void Start()
@@ -61,6 +62,14 @@ public class PlayerController : MonoBehaviour
 
         // Apply force to the Rigidbody to move the player.
         rb.AddForce(movement * speed);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            gameOverTextObject.SetActive(true);
+        }
     }
 
 
